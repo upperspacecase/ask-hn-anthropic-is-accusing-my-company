@@ -1,0 +1,15 @@
+SCORE: 7/10
+
+TOP 3 FIXES:
+1. **Make the CTA match what happens.** The button says "Build my evidence packet" and the microcopy says "Runs locally against your own logs", but the success state admits "The packet builder is not released yet." In `components/EmailCapture.tsx`, change the button to "Email me when it ships" and the microcopy to "Not released yet. It will run locally against your own logs; nothing leaves your infrastructure. No call required." Also change "It works from" to "It will work from" in `components/LogoStrip.tsx`.
+2. **Cut the 27-word H1 to one breath.** In `app/page.tsx`, replace it with: "Flagged for distillation? Show Anthropic that every spike on your key matches a git commit and a CI run." This keeps the specifics and drops the colon-joined double sentence.
+3. **Lift the strongest proof out of the animation into static text.** The best lines on the page ("5 of 5 bursts matched to a commit and a CI run", "Prompt text in packet: none") only appear late in the looping demo in `remotion/Demo.tsx`. Rewrite the caption under the demo in `app/page.tsx` to: "Sample packet, illustrative data: 5 of 5 bursts matched to a commit and a CI run. The packet holds timestamps, token counts, request volumes and prompt hashes Anthropic can check against its own records. No prompt text. We cannot promise reinstatement."
+
+GREEN FLAGS:
+- **Uniqueness:** no competitor could sign this headline; it names the exact accusation and the exact evidence (git commit plus CI run).
+- **Visualizable and falsifiable:** "traffic spike", "git commit" and "CI run" are concrete nouns, and the demo shows dates, commit hashes, run numbers and 2,120 requests per burst.
+- **Audience:** the subhead names the smallest viable audience precisely (builds on the API, trains no models, has no account rep), which matches the target customer.
+- **One promise:** the page has a single offer and a single form, with no nav or competing links above the fold.
+- **Honesty:** "We cannot promise reinstatement" and the "Illustrative data" label build trust with a sceptical HN reader.
+- **Objections handled at the form:** "Nothing leaves your infrastructure" and "No call required" answer the two main worries (end-user data, no sales process) right where the reader decides.
+- **Low setup:** the inputs strip (git log, CI history, Console usage export) shows the reader already has everything needed.

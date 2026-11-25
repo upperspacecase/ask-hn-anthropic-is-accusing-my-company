@@ -1,0 +1,17 @@
+HOOK: Anthropic flagged your eval suite as distillation: show them every traffic spike on your key lines up with a git commit and a CI run.
+
+SUBHEADLINE: For founders and CTOs who build on the Anthropic API, train no models, and have no account rep: turn your CI history and usage export into an evidence packet you can attach to your appeal.
+
+VALUE_PROP:
+Each burst of API calls is matched to the commit and CI job that triggered it.
+The packet shows repeated prompt sets, with counts and timestamps Anthropic can check against its own logs.
+It runs on your machine and outputs hashes and counts, never prompt text.
+
+CTA: Build my evidence packet
+
+SECONDARY_CTA: See a sample packet
+
+OBJECTIONS:
+- "This is self-reported data, so Anthropic has no reason to accept it." Correct, and we cannot promise reinstatement; the packet holds only timestamps, token counts and request volumes they can compare against their own records.
+- "I can't hand end-user data to another vendor." You don't: it runs locally, and the output contains hashes, counts and commit IDs, with no prompts or completions.
+- "I've already been flagged and had no logging in place." It works from what you already have: git log, CI run history and your Anthropic Console usage export.

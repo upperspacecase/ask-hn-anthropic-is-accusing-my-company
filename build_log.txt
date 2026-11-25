@@ -1,0 +1,33 @@
+API Error: 529 Overloaded. This is a server-side issue, usually temporary — try again in a moment. If it persists, check https://status.claude.com.
+
+The landing page is built in the current directory and `npm run build` passes, but signups only go to the server log, so it needs a real store before you send traffic.
+
+## What was verified
+- **Build:** type check and `npm run build` both pass, and Remotion bundles with the page.
+- **Rendering:** checked in a real browser at desktop width and at 375px. The demo loops and there is no horizontal overflow.
+- **Signup:** typing an email and clicking the CTA shows the success message and the server logs the email with its `?ref=` tag. A malformed email returns 400.
+
+## What the page contains
+1. **Hero:** the hook as the headline and the subheadline, both verbatim, then a one-field work-email form with "Build my evidence packet" and the "Runs locally…" line under it.
+2. **Remotion demo:** an 8-second looping sample packet, labelled "Illustrative data". Five usage spikes each match to a commit and a CI run, ending on "5 of 5 bursts matched" and "Prompt text in packet: none".
+3. **Logo strip:** text logos for Git, GitHub Actions, GitLab CI, CircleCI, Buildkite and Anthropic Console.
+4. **Footer:** See a sample packet, Privacy, Terms.
+
+## Stubbed or assumed
+- **Signup storage is a stub.** `/api/signup` only writes a JSON line to the server log. I used this instead of the localStorage pattern from the earlier builds, because localStorage never leaves the visitor's browser. Vercel log retention is short, so "we will email you" is not yet a promise you can keep.
+- **The test signal was blank in the brief.** I assumed it is an email submit on the primary CTA, as the psychology notes did.
+- **The product does not exist.** The success message says so: "The packet builder is not released yet." The "Runs locally… Nothing leaves your infrastructure" line and the CI tools in the logo strip describe the intended design, not shipped software.
+
+## Where I departed from the brief
+- **No "Generate this from my own logs" CTA beside the sample.** It conflicts with the one-CTA rule, so the hero CTA is the only action.
+- **No "no outputs written to a training pipeline" claim in the sample.** Git, CI and usage data cannot show that.
+- **Footer has no Contact, X or GitHub links.** I had no real destinations and would not invent them. Privacy and Terms are real short pages, and Terms says the site is not affiliated with Anthropic.
+- **CTA button uses dark text on orange.** White on `#F97316` fails the 4.5:1 contrast requirement.
+- **No blue anywhere.** The design system's primary blue conflicts with the one-accent rule, so the page is near-black, grey and the orange CTA.
+
+## Known weaknesses
+- **Demo text is tiny on a phone.** At 375px the demo scales to roughly 8px body text. Fixing it properly means a separate portrait composition, which I left out.
+- **Logo strip and footer wrap on a phone.** They take two to three rows at 375px rather than one.
+- **`_design_ref/` was empty.** There was no mockup to match.
+
+Nothing is committed (`builds/` is gitignored) and nothing is deployed.

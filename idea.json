@@ -1,0 +1,96 @@
+{
+  "status": "killed",
+  "killed_at_stage": 4,
+  "kill_reason": "Three or more well-funded products already cover every part of this problem a third party can address (immutable request logs, usage tagging, provider failover), and I cannot articulate a differentiator. The only unserved piece is a 'proof of non-distillation' that Anthropic would accept, and Anthropic is the sole arbiter with no published evidence standard, so no outside tool can deliver it. Thread commenters say the same: 'Doesn't matter what you did, didn't do, or can prove, what matters is what Anthropic decides' and 'Git history is trivial to rewrite'. The trigger is also a one-time, unpredictable 24h event: before it, the customer has no reason to buy; after it, logs that were never collected cannot be created retroactively.",
+  "stage_2": {
+    "customer": "Technical founder or CTO of a small B2B startup whose product runs on the Anthropic API under their own org key, does not train models, and runs automated regression/eval suites against Claude whenever prompts or model settings change. They handle end-user data they cannot hand to a vendor, and have no enterprise account rep. The post author (HN user weli) is this person.",
+    "where": "Hacker News (Ask HN threads on Anthropic bans: item 50630809, 47853021, 48641160). I did not verify any subreddit, Discord or Slack community: the PinchTab browser failed to launch (exec format error), so searching was limited to the HN Algolia API and GitHub.",
+    "pays_for": "Anthropic API usage (stated in the post). Adjacent categories this customer buys, not confirmed for this author: LLM gateways and observability (OpenRouter, LiteLLM, Langfuse, Helicone, Portkey), eval tooling, and Claude via AWS Bedrock (recommended in the thread)."
+  },
+  "stage_3": {
+    "real_posts": [
+      "https://news.ycombinator.com/item?id=47853021",
+      "https://news.ycombinator.com/item?id=48641160",
+      "https://news.ycombinator.com/item?id=50633458",
+      "https://news.ycombinator.com/item?id=50124259"
+    ],
+    "urgent": "Thin pass. The author states 'Now I've got 24h to prove we didn't'. In the same thread, 0xbadcafebee reports their production AWS Bedrock access to Anthropic has been blocked for days while they write an appeal. The first two URLs are full posts by different authors about the closely related problem (Anthropic banning orgs/accounts with no explanation or working appeal); the last two are comments, not posts, about false 'reasoning extraction' flags. I found no second full post about a distillation accusation specifically. Queries tried on HN Algolia: 'Anthropic distillation banned account', 'Anthropic flagged distillation', 'Anthropic account suspended API appeal', 'reasoning extraction flagged Claude', 'flagged for distillation', 'OpenAI distillation account banned', 'Anthropic banned my account', 'Anthropic disabled organization', 'Claude API access revoked usage policy', 'accused distillation Anthropic account'.",
+    "valuable": "Weak. The candidate post gives no dollar figure, spend or user count. The only numbers found are from related posts: the author of item 47853021 reports an org of 110 users banned without warning, and commenters there report a $200/month Max account banned and a two-week wait for an automated appeal rejection. No dollar cost of a distillation accusation is documented anywhere I searched."
+  },
+  "stage_4": {
+    "software": [
+      "Langfuse (https://langfuse.com): LLM tracing and eval logging; gives timestamped records of every call, but it is self-reported data Anthropic has no stated reason to accept, and it must be installed before the accusation.",
+      "LiteLLM (https://github.com/BerriAI/litellm) / Portkey (https://portkey.ai): gateways with per-key logging, tagging of eval traffic and provider fallback; they solve the practical damage (switch provider) but not the proof.",
+      "OpenRouter (https://openrouter.ai) / AWS Bedrock (https://aws.amazon.com/bedrock/): alternate routes to Claude; the thread reports Bedrock access to Anthropic gets blocked too, and neither offers any attestation of intent."
+    ],
+    "workarounds": [
+      "Show Anthropic the regression test harness and its git history (top thread suggestion; countered there with 'Git history is trivial to rewrite').",
+      "Hire a lawyer and send a formal letter, or go public on HN/social media to force a human review.",
+      "Switch provider or 'just use another model', the most common advice in the thread."
+    ],
+    "graveyard": "No graveyard found. GitHub repository searches for 'llm usage audit proof archived:true', 'distillation detection api llm' and 'llm api compliance evidence audit log' returned zero relevant repos (one unrelated fitness-tracker project). This shows nobody has attempted it, not that an attempt died; the structural blocker is that the accusing provider alone decides what counts as proof."
+  },
+  "stage_5": null,
+  "stage_6": null,
+  "id": "hn_50630809",
+  "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+  "url": "https://news.ycombinator.com/item?id=50630809",
+  "source": "hackernews",
+  "score": 227,
+  "num_comments": 166,
+  "app_name": "ask_hn_anthropic_is_accusing_my_company",
+  "summary": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+  "tech_stack": "Next.js + TypeScript + Tailwind CSS",
+  "_fallback_kill_stage": 4,
+  "_fallback_kill_reason": "Three or more well-funded products already cover every part of this problem a third party can address (immutable request logs, usage tagging, provider failover), and I cannot articulate a differentiator. The only unserved piece is a 'proof of non-distillation' that Anthropic would accept, and Anthropic is the sole arbiter with no published evidence standard, so no outside tool can deliver it. Thread commenters say the same: 'Doesn't matter what you did, didn't do, or can prove, what matters is what Anthropic decides' and 'Git history is trivial to rewrite'. The trigger is also a one-time, unpredictable 24h event: before it, the customer has no reason to buy; after it, logs that were never collected cannot be created retroactively.",
+  "_kill_report": "KILLS -- 2026-11-24\n\nTotal candidates evaluated: 28\nKilled: 28  |  Passed to MVP: 0\n\nBy stage:\n  Stage 1 (signal):       23 killed\n  Stage 2 (customer):     3 killed\n  Stage 3 (problem):      1 killed\n  Stage 4 (alternatives): 1 killed\n  Stage 5 (approach):     0 killed\n  Stage 6 (hypothesis):   0 killed\n",
+  "_total_evaluated": 28,
+  "_total_killed": 28,
+  "_fallback": true,
+  "_runners_up": [
+    {
+      "status": "killed",
+      "killed_at_stage": 3,
+      "kill_reason": "Fails Urgent and Valuable. Urgent: the post is an open-ended discussion question with no deadline, no money on the line and no blocked work; the breach has already happened and a leaked passport number cannot be un-leaked, so nothing forces a fix this week. Valuable: the author states no financial loss, no hours lost and no fraud incident; the only cost expressed is unease ('I feel every service we use is going to get dumped eventually'), which is the 'feels bad' case. Structural problem on top: the data the author cares about (passport number, travel history) is demanded by the vendor for legal and KYC reasons, so user-side software cannot mask it the way it masks emails, cards and phone numbers. The 'Real' search was not run, because the candidate already fails the other two required criteria on the post's own text; no additional posts are claimed.",
+      "stage_2": {
+        "customer": "Security-literate tech workers (developers, sysadmins, security engineers) who travel internationally several times a year, already use a password manager with unique passwords and hardware 2FA keys, and have received multiple breach notifications, most recently from a travel operator holding their passport number and travel history. Weakness: this is a consumer with a diffuse worry, not a buyer with a budget line.",
+        "where": "Hacker News (Ask HN security/privacy threads), r/privacy, r/PrivacyGuides, r/cybersecurity, r/yubikey, Privacy Guides forum (discuss.privacyguides.net), Techlore community. Listed from my own knowledge of these communities, not verified this session.",
+        "pays_for": "Password managers (1Password, Bitwarden premium), hardware security keys (YubiKey), email aliasing (SimpleLogin/Proton, Fastmail masked email), virtual cards (Privacy.com), data-broker removal (DeleteMe, Incogni), identity monitoring (Aura, LifeLock). Categories and product names are from my own knowledge; prices were not looked up."
+      },
+      "stage_3": {
+        "real_posts": [],
+        "urgent": "FAILED. No evidence in the post of a deadline, money at risk or blocked work. The author asks 'how are you actually limiting the blast radius' as a general practice question and explicitly rules out anything that turns 'everyday life into a massive faff', which signals low tolerance for effort, not readiness to adopt a fix this week.",
+        "valuable": "FAILED. No quantifiable cost in the post: no dollars lost, no hours per week, no fraud event. The stated cost is the feeling that everything will be breached. Real-post search was not performed; real_posts is empty because nothing was retrieved, not because a search returned nothing."
+      },
+      "stage_4": null,
+      "stage_5": null,
+      "stage_6": null,
+      "id": "hn_50626772",
+      "title": "Ask HN: Everything will get breached. How do you limit the blast radius?",
+      "url": "https://news.ycombinator.com/item?id=50626772",
+      "source": "hackernews",
+      "score": 12,
+      "num_comments": 8
+    },
+    {
+      "status": "killed",
+      "killed_at_stage": 2,
+      "kill_reason": "The post cannot support a product. The author gives no clues to narrow on: no business, revenue, workload, or deadline, only that they want the cheapest Hetzner-tier VM and it is out of stock. The only thing that defines this customer is paying the least possible for a commodity, which means no demonstrated willingness to pay for anything layered on top. The actual need is cheap compute capacity, which a Next.js MVP cannot supply, and the question is answered for free by replies in the thread naming other providers. Turning this into a stock-alert or price-comparison tool would be reframing the post to make it fit, which the rules say to kill. No research was run because the kill rests on the post's own content.",
+      "stage_2": {
+        "customer": "Could not be narrowed beyond 'a price-minimizing individual who wants the cheapest Hetzner cloud plan'. The post names no workload, business, revenue, or deadline, so I cannot point at this person in a room.",
+        "where": "Hacker News (the source thread) is the only location evidenced. I did not research other communities because the kill did not depend on it.",
+        "pays_for": "The only spend evidenced is the cheapest Hetzner VM tier, a few dollars or euros a month, and the post asks for 'as cheap or cheaper'. No adjacent paid tooling is evidenced."
+      },
+      "stage_3": null,
+      "stage_4": null,
+      "stage_5": null,
+      "stage_6": null,
+      "id": "hn_50554381",
+      "title": "Ask HN: Cheapest CPU Vms",
+      "url": "https://news.ycombinator.com/item?id=50554381",
+      "source": "hackernews",
+      "score": 15,
+      "num_comments": 10
+    }
+  ]
+}

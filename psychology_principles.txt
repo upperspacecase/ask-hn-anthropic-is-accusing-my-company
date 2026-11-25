@@ -1,0 +1,11 @@
+PRINCIPLE 1: Loss Aversion
+  Why it fits: A founder whose org key is flagged is facing a concrete loss (API access cut, product down, customers churning) with no account rep to call, so naming that loss motivates more than any "peace of mind" gain. The test signal was blank in the brief, so all three picks assume it is an email submit on the primary CTA.
+  How to apply: Write the hero headline as the loss in their own terms, e.g. "Your eval suite looks like distillation. If your key gets cut off, your product goes down with it." Put the single CTA directly beneath it, with no countdown timers or invented urgency.
+
+PRINCIPLE 2: Aha! Moment
+  Why it fits: This CTO will not give an email for a promise; they need to see that their regression traffic can be turned into evidence before they act.
+  How to apply: Directly below the hero, show a fully rendered sample "non-distillation evidence report", clearly labelled as a sample. It should show a fixed prompt set re-run on each prompt or config change, runs correlated to commit timestamps, and no outputs written to a training pipeline. Label the CTA beside it "Generate this from my own logs".
+
+PRINCIPLE 3: Reactance
+  Why it fits: They hold end-user data they cannot hand to a vendor, so any step that feels like "upload your logs" or "book a call" will make them bounce at the moment of commitment.
+  How to apply: Make the form one field (work email) with a line directly under the button: "Runs locally against your own logs. Nothing leaves your infrastructure. No call required." Keep that line only if the MVP actually works that way, and do not ask for an API key, a log upload or company details anywhere on the page.
